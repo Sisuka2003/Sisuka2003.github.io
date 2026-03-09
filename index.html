@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday ❤️</title>
+<title>Happy Birthday Chuti ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -59,7 +59,6 @@ p {
     margin: 20px 0;
     min-height: 80px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -96,124 +95,82 @@ button.hidden {
     display: none;
 }
 
-/* Cake Section */
-.cake-section {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.cake-container {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: cakePop 0.5s ease;
-}
-
-.cake-container.show {
-    display: flex;
-}
-
-@keyframes cakePop {
-    0% { transform: scale(0); opacity: 0; }
-    80% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.cake {
-    font-size: 120px;
-    line-height: 1;
-    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
-    animation: cakeFloat 3s infinite alternate;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.cake:hover {
-    transform: scale(1.1);
-}
-
-.cake:active {
-    transform: scale(0.9);
-}
-
-@keyframes cakeFloat {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
-}
-
-.blow-text {
-    font-size: 48px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 3px 3px 6px rgba(255, 20, 147, 0.5);
-    margin-top: 10px;
-    animation: blinkText 1.5s infinite;
-    cursor: pointer;
-    padding: 10px 30px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    border: 2px solid white;
-}
-
-@keyframes blinkText {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); background: rgba(255, 255, 255, 0.3); }
-}
-
-.blow-instruction {
-    font-size: 18px;
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Celebration Animation Elements - 1.5 second duration */
+/* Celebration Animation Elements - Random celebratory movements */
 .confetti {
     position: fixed;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: #f00;
-    opacity: 0.7;
+    opacity: 0.8;
     pointer-events: none;
     z-index: 9999;
-    top: -10px;
-    animation: confettiFall 1.5s ease-out forwards;
+    animation: randomCelebration 3s ease-out forwards;
 }
 
-@keyframes confettiFall {
+@keyframes randomCelebration {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translate(0, 0) rotate(0deg) scale(0.5);
         opacity: 0;
     }
-    20% {
+    10% {
         opacity: 1;
+        transform: translate(10px, -20px) rotate(45deg) scale(1);
+    }
+    25% {
+        transform: translate(-15px, -50px) rotate(90deg) scale(1.2);
+    }
+    40% {
+        transform: translate(20px, -30px) rotate(135deg) scale(1);
+    }
+    55% {
+        transform: translate(-10px, -70px) rotate(180deg) scale(1.3);
+    }
+    70% {
+        transform: translate(15px, -40px) rotate(225deg) scale(1.1);
+    }
+    85% {
+        transform: translate(-5px, -80px) rotate(270deg) scale(1.2);
     }
     100% {
-        transform: translateY(100vh) rotate(720deg);
+        transform: translate(0, -100px) rotate(360deg) scale(0.8);
         opacity: 0;
     }
 }
 
 .floating-heart {
     position: fixed;
-    font-size: 20px;
+    font-size: 24px;
     pointer-events: none;
     z-index: 9998;
-    bottom: -50px;
-    animation: heartFloat 1.5s ease-out forwards;
+    animation: heartDance 3s ease-out forwards;
 }
 
-@keyframes heartFloat {
+@keyframes heartDance {
     0% {
-        transform: translateY(0) scale(0.5);
+        transform: translate(0, 0) scale(0.5);
         opacity: 0;
     }
-    20% {
+    15% {
         opacity: 1;
-        transform: scale(1);
+        transform: translate(-20px, -30px) scale(1.2) rotate(-10deg);
+    }
+    30% {
+        transform: translate(15px, -60px) scale(1) rotate(15deg);
+    }
+    45% {
+        transform: translate(-10px, -40px) scale(1.3) rotate(-20deg);
+    }
+    60% {
+        transform: translate(25px, -70px) scale(1.1) rotate(25deg);
+    }
+    75% {
+        transform: translate(-15px, -50px) scale(1.4) rotate(-15deg);
+    }
+    90% {
+        transform: translate(10px, -80px) scale(1.2) rotate(10deg);
     }
     100% {
-        transform: translateY(-100vh) scale(1.5);
+        transform: translate(0, -100px) scale(1) rotate(0deg);
         opacity: 0;
     }
 }
@@ -223,50 +180,164 @@ button.hidden {
     font-size: 40px;
     pointer-events: none;
     z-index: 9997;
-    top: -50px;
-    left: 0;
-    animation: cheerFall 1.5s ease-out forwards;
+    animation: cheerSpin 3s ease-out forwards;
 }
 
-@keyframes cheerFall {
+@keyframes cheerSpin {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translate(0, 0) scale(0.3) rotate(0deg);
         opacity: 0;
     }
-    20% {
+    10% {
         opacity: 1;
-        transform: rotate(180deg);
+        transform: translate(30px, -20px) scale(1) rotate(72deg);
+    }
+    25% {
+        transform: translate(-20px, -45px) scale(1.3) rotate(144deg);
+    }
+    40% {
+        transform: translate(25px, -35px) scale(1.1) rotate(216deg);
+    }
+    55% {
+        transform: translate(-30px, -60px) scale(1.4) rotate(288deg);
+    }
+    70% {
+        transform: translate(20px, -50px) scale(1.2) rotate(360deg);
+    }
+    85% {
+        transform: translate(-15px, -75px) scale(1.3) rotate(432deg);
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translate(0, -100px) scale(1) rotate(504deg);
         opacity: 0;
     }
 }
 
 .sparkle {
     position: fixed;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: gold;
     pointer-events: none;
     z-index: 9996;
-    top: -10px;
-    animation: sparkleFall 1.5s linear forwards;
+    animation: sparkleTwirl 3s linear forwards;
 }
 
-@keyframes sparkleFall {
+@keyframes sparkleTwirl {
     0% {
-        transform: translateY(0) scale(0);
+        transform: translate(0, 0) scale(0);
         opacity: 0;
     }
-    20% {
-        transform: scale(2);
+    10% {
+        transform: translate(-15px, -25px) scale(1.5);
         opacity: 1;
         box-shadow: 0 0 20px gold;
     }
+    25% {
+        transform: translate(20px, -45px) scale(1);
+        box-shadow: 0 0 30px gold;
+    }
+    40% {
+        transform: translate(-10px, -35px) scale(2);
+        box-shadow: 0 0 40px gold;
+    }
+    55% {
+        transform: translate(25px, -55px) scale(1.2);
+        box-shadow: 0 0 30px gold;
+    }
+    70% {
+        transform: translate(-20px, -70px) scale(1.8);
+        box-shadow: 0 0 50px gold;
+    }
+    85% {
+        transform: translate(15px, -60px) scale(1.3);
+        box-shadow: 0 0 40px gold;
+    }
     100% {
-        transform: translateY(100vh) scale(0);
+        transform: translate(0, -100px) scale(0);
+        opacity: 0;
+    }
+}
+
+.balloon {
+    position: fixed;
+    font-size: 35px;
+    pointer-events: none;
+    z-index: 9995;
+    animation: balloonBounce 3s ease-out forwards;
+}
+
+@keyframes balloonBounce {
+    0% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 0;
+    }
+    12% {
+        opacity: 1;
+        transform: translate(-25px, -30px) scale(1.1) rotate(-15deg);
+    }
+    28% {
+        transform: translate(30px, -50px) scale(1) rotate(20deg);
+    }
+    42% {
+        transform: translate(-20px, -40px) scale(1.2) rotate(-25deg);
+    }
+    58% {
+        transform: translate(35px, -65px) scale(1.1) rotate(30deg);
+    }
+    72% {
+        transform: translate(-15px, -55px) scale(1.3) rotate(-20deg);
+    }
+    88% {
+        transform: translate(25px, -80px) scale(1.2) rotate(15deg);
+    }
+    100% {
+        transform: translate(0, -100px) scale(1) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.star {
+    position: fixed;
+    font-size: 30px;
+    pointer-events: none;
+    z-index: 9994;
+    animation: starTwinkle 3s ease-out forwards;
+}
+
+@keyframes starTwinkle {
+    0% {
+        transform: translate(0, 0) scale(0.2) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+        transform: translate(20px, -25px) scale(1.3) rotate(30deg);
+        filter: brightness(1.5);
+    }
+    30% {
+        transform: translate(-25px, -45px) scale(1) rotate(60deg);
+        filter: brightness(1);
+    }
+    45% {
+        transform: translate(30px, -40px) scale(1.4) rotate(90deg);
+        filter: brightness(1.8);
+    }
+    60% {
+        transform: translate(-20px, -60px) scale(1.1) rotate(120deg);
+        filter: brightness(1.2);
+    }
+    75% {
+        transform: translate(25px, -70px) scale(1.3) rotate(150deg);
+        filter: brightness(1.6);
+    }
+    90% {
+        transform: translate(-15px, -85px) scale(1.2) rotate(180deg);
+        filter: brightness(1.3);
+    }
+    100% {
+        transform: translate(0, -100px) scale(0.8) rotate(210deg);
         opacity: 0;
     }
 }
@@ -293,28 +364,25 @@ button.hidden {
 .decorative-heart:nth-child(5) { top: 50%; left: 3%; animation-delay: 4s; }
 .decorative-heart:nth-child(6) { top: 60%; right: 5%; animation-delay: 5s; }
 
-/* Blow effect when clicking cake */
-@keyframes candleBlow {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.8; }
-    100% { transform: scale(0); opacity: 0; }
-}
-
-.candle-blow {
-    animation: candleBlow 0.5s forwards;
-}
-
-@keyframes messageAppear {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
+/* Love message after celebration */
 .love-message {
     font-size: 32px;
     color: white;
     margin-top: 20px;
-    animation: messageAppear 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
     text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.5);
+}
+
+.love-message.show {
+    opacity: 1;
+    animation: messagePop 0.5s ease;
+}
+
+@keyframes messagePop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* For very small devices */
@@ -326,14 +394,6 @@ button.hidden {
     button {
         min-width: 180px;
         padding: 15px 25px;
-    }
-    
-    .cake {
-        font-size: 80px;
-    }
-    
-    .blow-text {
-        font-size: 36px;
     }
 }
 </style>
@@ -357,70 +417,38 @@ button.hidden {
             <button id="celebrateBtn" onclick="startCelebration()">🎈 Click to Celebrate! 🎈</button>
         </div>
         
-        <!-- Cake Section (initially hidden) -->
-        <div id="cakeSection" class="cake-section">
-            <div id="cakeContainer" class="cake-container">
-                <div class="cake" id="cake" onclick="blowCandle()">🎂</div>
-                <div class="blow-text" id="blowText" onclick="blowCandle()">BLOW!</div>
-                <div class="blow-instruction">👇 Click the cake or BLOW! to blow the candle 👇</div>
-            </div>
-        </div>
-        
         <div id="loveMessage" class="love-message"></div>
     </div>
 
     <script>
     let celebrationDone = false;
-    let candleBlown = false;
 
     function startCelebration() {
         if (celebrationDone) return;
         
-        // Hide the button
+        // Hide the button immediately
         document.getElementById('celebrateBtn').classList.add('hidden');
         
-        // Start 1.5 second celebration animations
-        createConfetti(40);
-        createHearts(30);
-        createCheers(25);
-        createSparkles(35);
+        // Start 3 second celebration animations with random patterns
+        createConfetti(70);
+        createHearts(60);
+        createCheers(50);
+        createSparkles(60);
+        createBalloons(40);
+        createStars(40);
         
-        // After 1.5 seconds, show the cake
+        // After 3 seconds, show the love message
         setTimeout(() => {
-            document.getElementById('cakeContainer').classList.add('show');
-            celebrationDone = true;
-        }, 1500);
-    }
-
-    function blowCandle() {
-        if (candleBlown) return;
-        
-        candleBlown = true;
-        
-        // Get cake element
-        const cake = document.getElementById('cake');
-        
-        // Add blow animation
-        cake.classList.add('candle-blow');
-        document.getElementById('blowText').style.opacity = '0';
-        
-        // Show love message after blowing
-        setTimeout(() => {
-            document.getElementById('loveMessage').innerHTML = "I love you! ❤️🎂";
+            document.getElementById('loveMessage').classList.add('show');
+            document.getElementById('loveMessage').innerHTML = "I love you! ❤️🎉";
             
-            // Hide the blow text
-            document.getElementById('blowText').style.display = 'none';
-            document.querySelector('.blow-instruction').style.display = 'none';
-            
-            // Change cake to blown out version
-            cake.innerHTML = '🍰'; // Cake without candle
-            cake.classList.remove('candle-blow');
-            cake.style.animation = 'none';
-            
-            // One final small celebration
-            createConfetti(15);
-            createHearts(10);
-        }, 500);
+            // Small final pop of celebration
+            createConfetti(25);
+            createHearts(20);
+            createStars(15);
+        }, 3000);
+        
+        celebrationDone = true;
     }
 
     // Confetti creator
@@ -431,16 +459,17 @@ button.hidden {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
             confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.animationDelay = Math.random() * 0.3 + 's';
+            confetti.style.top = Math.random() * 60 + 20 + '%'; // Start from different vertical positions
+            confetti.style.animationDelay = Math.random() * 2 + 's';
             confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.width = Math.random() * 15 + 5 + 'px';
-            confetti.style.height = Math.random() * 15 + 5 + 'px';
+            confetti.style.width = Math.random() * 15 + 8 + 'px';
+            confetti.style.height = Math.random() * 15 + 8 + 'px';
             confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
             document.body.appendChild(confetti);
             
             setTimeout(() => {
                 confetti.remove();
-            }, 1800);
+            }, 5000);
         }
     }
 
@@ -451,32 +480,34 @@ button.hidden {
             heart.className = 'floating-heart';
             heart.innerHTML = ['❤️', '💕', '💖', '💗', '💓', '💘', '💝'][Math.floor(Math.random() * 7)];
             heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = Math.random() * 70 + 15 + '%';
             heart.style.fontSize = Math.random() * 30 + 20 + 'px';
-            heart.style.animationDelay = Math.random() * 0.3 + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
             document.body.appendChild(heart);
             
             setTimeout(() => {
                 heart.remove();
-            }, 1800);
+            }, 5000);
         }
     }
 
     // Cheering emojis creator
     function createCheers(count) {
-        const cheers = ['🎉', '🎊', '🥳', '🎂', '🎈', '✨', '⭐', '🌟', '💫', '⚡', '🔥', '💥'];
+        const cheers = ['🎉', '🎊', '🥳', '🎂', '🎈', '✨', '⭐', '🌟', '💫', '⚡', '🔥', '💥', '🎆', '🎇'];
         
         for (let i = 0; i < count; i++) {
             const cheer = document.createElement('div');
             cheer.className = 'cheer';
             cheer.innerHTML = cheers[Math.floor(Math.random() * cheers.length)];
             cheer.style.left = Math.random() * 100 + '%';
+            cheer.style.top = Math.random() * 60 + 20 + '%';
             cheer.style.fontSize = Math.random() * 30 + 30 + 'px';
-            cheer.style.animationDelay = Math.random() * 0.2 + 's';
+            cheer.style.animationDelay = Math.random() * 2 + 's';
             document.body.appendChild(cheer);
             
             setTimeout(() => {
                 cheer.remove();
-            }, 1700);
+            }, 5000);
         }
     }
 
@@ -486,13 +517,54 @@ button.hidden {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
             sparkle.style.left = Math.random() * 100 + '%';
-            sparkle.style.animationDelay = Math.random() * 0.3 + 's';
-            sparkle.style.backgroundColor = ['gold', '#ffd700', '#ffff00', '#ffa500'][Math.floor(Math.random() * 4)];
+            sparkle.style.top = Math.random() * 70 + 15 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparkle.style.backgroundColor = ['gold', '#ffd700', '#ffff00', '#ffa500', '#ff69b4'][Math.floor(Math.random() * 5)];
             document.body.appendChild(sparkle);
             
             setTimeout(() => {
                 sparkle.remove();
-            }, 1700);
+            }, 5000);
+        }
+    }
+
+    // Balloons creator
+    function createBalloons(count) {
+        const balloons = ['🎈', '🎈', '🎈', '🎈', '🎈'];
+        
+        for (let i = 0; i < count; i++) {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.innerHTML = balloons[Math.floor(Math.random() * balloons.length)];
+            balloon.style.left = Math.random() * 100 + '%';
+            balloon.style.top = Math.random() * 70 + 15 + '%';
+            balloon.style.fontSize = Math.random() * 30 + 25 + 'px';
+            balloon.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.remove();
+            }, 5000);
+        }
+    }
+
+    // Stars creator
+    function createStars(count) {
+        const stars = ['⭐', '🌟', '✨', '💫', '⭐'];
+        
+        for (let i = 0; i < count; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.innerHTML = stars[Math.floor(Math.random() * stars.length)];
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 70 + 15 + '%';
+            star.style.fontSize = Math.random() * 30 + 25 + 'px';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(star);
+            
+            setTimeout(() => {
+                star.remove();
+            }, 5000);
         }
     }
 
