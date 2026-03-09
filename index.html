@@ -76,37 +76,6 @@
             100% { transform: translateY(100vh) rotate(360deg); }
         }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            padding: 30px 0;
-            position: relative;
-            z-index: 10;
-        }
-
-        nav a {
-            color: #ff6b8b;
-            text-decoration: none;
-            font-size: 22px;
-            font-weight: bold;
-            padding: 10px 25px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
-            border: 2px solid white;
-            transition: all 0.3s ease;
-            font-family: 'Fredoka One', sans-serif;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover {
-            transform: scale(1.1) rotate(-2deg);
-            background: white;
-            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.3);
-        }
-
         /* Main Container */
         .container {
             max-width: 1200px;
@@ -118,7 +87,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 100px);
+            min-height: 100vh;
         }
 
         /* Banner */
@@ -342,62 +311,6 @@
             }
         }
 
-        /* Contact Section */
-        .contact-section {
-            margin: 50px 0;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #ff6b8b;
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 40px;
-            border: 3px solid white;
-            box-shadow: 0 8px 0 #b34e67, 0 10px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            font-family: 'Fredoka One', sans-serif;
-            letter-spacing: 2px;
-        }
-
-        .contact-btn:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 12px 0 #b34e67, 0 15px 25px rgba(0,0,0,0.2);
-        }
-
-        .contact-btn:active {
-            transform: translateY(5px);
-            box-shadow: 0 4px 0 #b34e67, 0 8px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Music Note */
-        .music-note {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 40px;
-            background: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 100;
-            animation: spin 4s infinite linear;
-            border: 3px solid #ff6b8b;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .banner h1 {
@@ -424,11 +337,6 @@
             .party-button {
                 font-size: 22px;
                 padding: 15px 30px;
-            }
-            
-            nav a {
-                font-size: 18px;
-                padding: 8px 18px;
             }
         }
 
@@ -468,18 +376,6 @@
 
     <!-- Confetti Background -->
     <div class="confetti" id="confetti"></div>
-
-    <!-- Music Note -->
-    <div class="music-note" onclick="playPartyMusic()">
-        🎵
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="#">🏠 HOME</a>
-        <a href="#">📸 PARTY</a>
-        <a href="#">🎁 GIFTS</a>
-    </nav>
 
     <!-- Main Content -->
     <div class="container">
@@ -534,11 +430,6 @@
             <button class="party-button" onclick="startParty()">
                 🎉 CLICK FOR SURPRISE! 🎉
             </button>
-        </div>
-
-        <!-- Contact Button -->
-        <div class="contact-section">
-            <a href="#" class="contact-btn">📱 CONTACT BANCHII</a>
         </div>
     </div>
 
@@ -606,13 +497,6 @@
             setTimeout(() => {
                 alert('🎉 HAPPY BIRTHDAY BANCHII! 🎉\n\nWishing you the most amazing day! 🎂❤️');
             }, 500);
-        }
-
-        // Play music (simulated)
-        function playPartyMusic() {
-            partyPopper('🎵');
-            partyPopper('🎶');
-            alert('🎵 PARTY MUSIC! 🎵\n\n* Happy Birthday song playing in your heart * ❤️');
         }
 
         // Initialize
