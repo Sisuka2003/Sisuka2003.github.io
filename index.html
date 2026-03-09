@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
+    <title>Happy Birthday Banchii! 🎂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,180 +15,618 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(145deg, #f9d6e0 0%, #f9b8c4 100%);
+            color: #4a4a4a;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Balloons Background */
+        .balloons-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.3;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        .balloon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .balloon:nth-child(2) { top: 70%; right: 8%; animation-delay: 1s; }
+        .balloon:nth-child(3) { top: 30%; right: 15%; animation-delay: 2s; }
+        .balloon:nth-child(4) { bottom: 15%; left: 12%; animation-delay: 3s; }
+        .balloon:nth-child(5) { top: 80%; left: 20%; animation-delay: 4s; }
+        .balloon:nth-child(6) { top: 20%; right: 25%; animation-delay: 5s; }
+
+        /* Party Decorations */
+        .confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: #ffd700;
+            opacity: 0.3;
+            animation: confettiFall 5s infinite linear;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
         }
 
         /* Navigation */
         nav {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            padding: 40px 0;
-            font-size: 18px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 500;
+            gap: 50px;
+            padding: 30px 0;
+            position: relative;
+            z-index: 10;
         }
 
         nav a {
-            color: white;
+            color: #ff6b8b;
             text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            font-family: 'Fredoka One', sans-serif;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
-            opacity: 1;
+            transform: scale(1.1) rotate(-2deg);
+            background: white;
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.3);
         }
 
         /* Main Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 140px);
+            min-height: calc(100vh - 100px);
+        }
+
+        /* Banner */
+        .banner {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 30px 60px;
+            border-radius: 100px;
+            margin-bottom: 40px;
+            border: 4px dashed #ff6b8b;
+            box-shadow: 0 20px 40px rgba(255, 107, 139, 0.3);
+            transform: rotate(-2deg);
+            animation: bannerFloat 3s infinite alternate;
+        }
+
+        @keyframes bannerFloat {
+            0% { transform: rotate(-2deg) translateY(0); }
+            100% { transform: rotate(2deg) translateY(-10px); }
+        }
+
+        .banner h1 {
+            font-size: 80px;
+            font-family: 'Pacifico', cursive;
+            color: #ff4d6d;
+            text-shadow: 5px 5px 0 #ffe6e9, 8px 8px 0 rgba(0,0,0,0.1);
+            line-height: 1;
         }
 
         /* Birthday Text */
         .birthday-text {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 20px 0;
         }
 
         .happy {
-            font-size: 100px;
+            font-size: 70px;
             font-weight: 700;
-            line-height: 1;
+            color: #fff;
+            text-shadow: 4px 4px 0 #ff6b8b, 6px 6px 0 #4a4a4a;
+            font-family: 'Fredoka One', sans-serif;
             letter-spacing: 5px;
-            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            transform: rotate(-3deg);
+            display: inline-block;
         }
 
         .birthday {
-            font-size: 100px;
+            font-size: 90px;
             font-weight: 700;
-            line-height: 1;
-            letter-spacing: 5px;
-            margin-top: -10px;
-            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
-        }
-
-        /* Description */
-        .description {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 18px;
-            line-height: 1.8;
-            opacity: 0.95;
-            max-width: 600px;
-        }
-
-        .description p {
-            margin: 10px 0;
-        }
-
-        .description .small-text {
-            font-style: italic;
-            margin-top: 20px;
-        }
-
-        /* Contact Button */
-        .contact-btn {
-            margin-top: 30px;
-        }
-
-        .contact-btn a {
+            color: #ffd93d;
+            text-shadow: 4px 4px 0 #ff6b8b, 6px 6px 0 #4a4a4a;
+            font-family: 'Fredoka One', sans-serif;
+            letter-spacing: 8px;
+            transform: rotate(2deg);
+            margin-top: -15px;
             display: inline-block;
-            padding: 15px 50px;
-            border: 2px solid white;
+        }
+
+        /* Cake Section */
+        .cake-section {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .cake {
+            font-size: 150px;
+            filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+            animation: cakeWiggle 4s infinite;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        @keyframes cakeWiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        .cake:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .candle-flame {
+            font-size: 50px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); opacity: 1; }
+            100% { transform: translateX(-50%) scale(1.2); opacity: 0.9; }
+        }
+
+        /* Message Card */
+        .message-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px 50px;
+            border-radius: 80px 20px 80px 20px;
+            margin: 30px 0;
+            border: 3px solid white;
+            box-shadow: 0 15px 30px rgba(255, 107, 139, 0.3);
+            max-width: 600px;
+            text-align: center;
+            transform: rotate(1deg);
+        }
+
+        .message-card p {
+            font-size: 24px;
+            color: #ff4d6d;
+            font-weight: bold;
+            line-height: 1.6;
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .message-card .emoji-row {
+            font-size: 40px;
+            margin-top: 15px;
+            animation: emojiBounce 2s infinite;
+        }
+
+        @keyframes emojiBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Party Features Grid */
+        .party-features {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 50% 50% 30% 30%;
+            box-shadow: 0 15px 0 #ff6b8b, 0 20px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 150px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 0 #ff4d6d, 0 25px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature .emoji {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .feature span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff4d6d;
+            background: #ffe6e9;
+            padding: 8px 15px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Surprise Button */
+        .surprise-btn {
+            margin: 40px 0;
+        }
+
+        .party-button {
+            padding: 20px 50px;
+            font-size: 28px;
+            font-family: 'Fredoka One', sans-serif;
+            background: linear-gradient(145deg, #ffd93d, #ffb347);
+            border: none;
+            border-radius: 60px;
+            color: white;
+            text-shadow: 2px 2px 0 #ff6b8b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 0 #ff8c42, 0 15px 25px rgba(0,0,0,0.2);
+            border: 3px solid white;
+            letter-spacing: 2px;
+        }
+
+        .party-button:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 0 #ff8c42, 0 20px 30px rgba(0,0,0,0.2);
+        }
+
+        .party-button:active {
+            transform: translateY(5px);
+            box-shadow: 0 5px 0 #ff8c42, 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Party Popper Animation */
+        .party-popper {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            font-size: 30px;
+            animation: popAndFade 1s ease-out forwards;
+        }
+
+        @keyframes popAndFade {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5) rotate(180deg);
+            }
+            100% {
+                transform: scale(2) rotate(360deg) translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin: 50px 0;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #ff6b8b;
             color: white;
             text-decoration: none;
-            font-size: 20px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 40px;
+            border: 3px solid white;
+            box-shadow: 0 8px 0 #b34e67, 0 10px 20px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
-            border-radius: 5px;
+            font-family: 'Fredoka One', sans-serif;
+            letter-spacing: 2px;
         }
 
-        .contact-btn a:hover {
+        .contact-btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 12px 0 #b34e67, 0 15px 25px rgba(0,0,0,0.2);
+        }
+
+        .contact-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 4px 0 #b34e67, 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Music Note */
+        .music-note {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
             background: white;
-            color: #764ba2;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 100;
+            animation: spin 4s infinite linear;
+            border: 3px solid #ff6b8b;
         }
 
-        /* Responsive Design */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                gap: 30px;
-                padding: 30px 0;
-                font-size: 16px;
+            .banner h1 {
+                font-size: 50px;
             }
-
-            .happy, .birthday {
-                font-size: 60px;
+            
+            .happy {
+                font-size: 40px;
             }
-
-            .description {
-                font-size: 16px;
-                padding: 0 20px;
+            
+            .birthday {
+                font-size: 55px;
             }
-
-            .contact-btn a {
-                padding: 12px 40px;
+            
+            .cake {
+                font-size: 100px;
+            }
+            
+            .feature {
+                min-width: 120px;
+                padding: 20px;
+            }
+            
+            .party-button {
+                font-size: 22px;
+                padding: 15px 30px;
+            }
+            
+            nav a {
                 font-size: 18px;
+                padding: 8px 18px;
             }
         }
 
         @media (max-width: 480px) {
-            nav {
-                gap: 20px;
-                font-size: 14px;
+            .banner h1 {
+                font-size: 36px;
             }
-
-            .happy, .birthday {
+            
+            .happy {
+                font-size: 30px;
+            }
+            
+            .birthday {
                 font-size: 40px;
             }
-
-            .description {
-                font-size: 14px;
+            
+            .message-card p {
+                font-size: 18px;
             }
-
-            .contact-btn a {
-                padding: 10px 30px;
-                font-size: 16px;
+            
+            .feature {
+                min-width: 100px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Floating Balloons Background -->
+    <div class="balloons-bg">
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+    </div>
+
+    <!-- Confetti Background -->
+    <div class="confetti" id="confetti"></div>
+
+    <!-- Music Note -->
+    <div class="music-note" onclick="playPartyMusic()">
+        🎵
+    </div>
+
     <!-- Navigation -->
     <nav>
-        <a href="#">HOME</a>
-        <a href="#">PORTFOLIO</a>
-        <a href="#">CONTACT</a>
+        <a href="#">🏠 HOME</a>
+        <a href="#">📸 PARTY</a>
+        <a href="#">🎁 GIFTS</a>
     </nav>
 
     <!-- Main Content -->
     <div class="container">
+        <!-- Birthday Banner -->
+        <div class="banner">
+            <h1>🎉 For Banchii! 🎉</h1>
+        </div>
+
+        <!-- Birthday Text -->
         <div class="birthday-text">
             <div class="happy">HAPPY</div>
             <div class="birthday">BIRTHDAY</div>
         </div>
 
-        <div class="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-            <p>elit. Donec quis facilis ligula.</p>
-            <p class="small-text">Donec enim justo.</p>
+        <!-- Cake with Candle -->
+        <div class="cake-section" onclick="blowCandle()">
+            <div class="cake">🎂</div>
+            <div class="candle-flame" id="flame">🔥</div>
         </div>
 
-        <div class="contact-btn">
-            <a href="#">Contact</a>
+        <!-- Message Card -->
+        <div class="message-card">
+            <p>Happy Birthday Banchii! 🎂</p>
+            <p>You make life so much fun!</p>
+            <div class="emoji-row">
+                🎉 🎊 🎈 🎁
+            </div>
+        </div>
+
+        <!-- Party Features -->
+        <div class="party-features">
+            <div class="feature" onclick="partyPopper('🎁')">
+                <span class="emoji">🎁</span>
+                <span>GIFTS</span>
+            </div>
+            <div class="feature" onclick="partyPopper('🎈')">
+                <span class="emoji">🎈</span>
+                <span>BALLOONS</span>
+            </div>
+            <div class="feature" onclick="partyPopper('🥳')">
+                <span class="emoji">🥳</span>
+                <span>PARTY</span>
+            </div>
+            <div class="feature" onclick="partyPopper('🍰')">
+                <span class="emoji">🍰</span>
+                <span>CAKE</span>
+            </div>
+        </div>
+
+        <!-- Surprise Button -->
+        <div class="surprise-btn">
+            <button class="party-button" onclick="startParty()">
+                🎉 CLICK FOR SURPRISE! 🎉
+            </button>
+        </div>
+
+        <!-- Contact Button -->
+        <div class="contact-section">
+            <a href="#" class="contact-btn">📱 CONTACT BANCHII</a>
         </div>
     </div>
+
+    <script>
+        // Create confetti pieces
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.background = ['#ffd700', '#ff6b8b', '#87ceeb', '#98fb98'][Math.floor(Math.random() * 4)];
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        // Party popper effect
+        function partyPopper(emoji) {
+            for (let i = 0; i < 10; i++) {
+                const popper = document.createElement('div');
+                popper.className = 'party-popper';
+                popper.innerHTML = emoji;
+                popper.style.left = Math.random() * 100 + '%';
+                popper.style.top = Math.random() * 100 + '%';
+                popper.style.animationDelay = i * 0.1 + 's';
+                document.body.appendChild(popper);
+                
+                setTimeout(() => {
+                    popper.remove();
+                }, 1000);
+            }
+        }
+
+        // Blow candle
+        function blowCandle() {
+            const flame = document.getElementById('flame');
+            flame.style.animation = 'none';
+            flame.style.opacity = '0';
+            
+            // Party popper celebration
+            partyPopper('🎉');
+            partyPopper('🎊');
+            
+            // Show message
+            setTimeout(() => {
+                flame.style.opacity = '1';
+                flame.style.animation = 'flicker 0.5s infinite alternate';
+            }, 3000);
+        }
+
+        // Start party
+        function startParty() {
+            // Multiple party poppers
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    partyPopper('🎉');
+                    partyPopper('🎊');
+                    partyPopper('🎈');
+                    partyPopper('🥳');
+                }, i * 200);
+            }
+            
+            // Alert message
+            setTimeout(() => {
+                alert('🎉 HAPPY BIRTHDAY BANCHII! 🎉\n\nWishing you the most amazing day! 🎂❤️');
+            }, 500);
+        }
+
+        // Play music (simulated)
+        function playPartyMusic() {
+            partyPopper('🎵');
+            partyPopper('🎶');
+            alert('🎵 PARTY MUSIC! 🎵\n\n* Happy Birthday song playing in your heart * ❤️');
+        }
+
+        // Initialize
+        createConfetti();
+
+        // Add click effect to features
+        document.querySelectorAll('.feature').forEach(feature => {
+            feature.addEventListener('click', function() {
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
 </body>
 </html>
