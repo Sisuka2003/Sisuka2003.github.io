@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday My Love! 🎂</title>
+    <title>Happy Birthday Chutiii! 🎂</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
@@ -80,29 +80,30 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px 20px;
             position: relative;
             z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Changed from center to flex-start */
             min-height: 100vh;
-            text-align: center; /* Ensures all text is centered */
+            text-align: center;
+            padding-top: 30px; /* Added top padding */
         }
 
-        /* Banner */
+        /* Banner - Reduced font size and moved up */
         .banner {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            padding: 25px 50px;
-            border-radius: 100px;
-            margin-bottom: 40px;
+            padding: 15px 40px;
+            border-radius: 80px;
+            margin-bottom: 20px;
             border: 4px dashed #ff6b8b;
             box-shadow: 0 20px 40px rgba(255, 107, 139, 0.3);
             transform: rotate(-1deg);
             animation: bannerFloat 3s infinite alternate;
-            display: inline-block; /* Makes banner fit content */
+            display: inline-block;
             margin-left: auto;
             margin-right: auto;
         }
@@ -113,58 +114,76 @@
         }
 
         .banner h1 {
-            font-size: 70px;
+            font-size: 40px; /* Reduced from 70px */
             font-family: 'Pacifico', cursive;
             color: #ff4d6d;
-            text-shadow: 3px 3px 0 #ffe6e9, 5px 5px 0 rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 0 #ffe6e9, 4px 4px 0 rgba(0,0,0,0.1);
             line-height: 1;
             white-space: nowrap;
         }
 
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 45px;
-                white-space: normal;
-            }
-        }
-
-        /* Birthday Text */
+        /* Birthday Text - Increased font sizes */
         .birthday-text {
             text-align: center;
-            margin: 20px 0;
+            margin: 15px 0;
             width: 100%;
         }
 
         .happy {
-            font-size: 90px;
+            font-size: 120px; /* Increased from 90px */
             font-weight: 700;
             color: #fff;
-            text-shadow: 4px 4px 0 #ff6b8b, 6px 6px 0 #4a4a4a;
+            text-shadow: 5px 5px 0 #ff6b8b, 8px 8px 0 #4a4a4a;
             font-family: 'Fredoka One', sans-serif;
             letter-spacing: 5px;
             transform: rotate(-3deg);
             display: inline-block;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1;
         }
 
         .birthday {
-            font-size: 110px;
+            font-size: 140px; /* Increased from 110px */
             font-weight: 700;
             color: #ffd93d;
-            text-shadow: 4px 4px 0 #ff6b8b, 6px 6px 0 #4a4a4a;
+            text-shadow: 5px 5px 0 #ff6b8b, 8px 8px 0 #4a4a4a;
             font-family: 'Fredoka One', sans-serif;
             letter-spacing: 8px;
             transform: rotate(2deg);
-            margin-top: -15px;
+            margin-top: -20px;
             display: inline-block;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1;
+        }
+
+        /* Chutiii Text - New addition */
+        .chutiii-text {
+            font-size: 70px;
+            font-family: 'Pacifico', cursive;
+            color: #ff4d6d;
+            text-shadow: 3px 3px 0 #ffe6e9, 5px 5px 0 rgba(0,0,0,0.1);
+            margin-top: -15px;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 10px 40px;
+            border-radius: 60px;
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+            transform: rotate(1deg);
+            animation: chutiiiPop 2s infinite alternate;
+        }
+
+        @keyframes chutiiiPop {
+            0% { transform: rotate(1deg) scale(1); }
+            100% { transform: rotate(2deg) scale(1.05); }
         }
 
         /* Cake Section */
         .cake-section {
-            margin: 40px 0;
+            margin: 30px 0;
             position: relative;
             display: flex;
             justify-content: center;
@@ -207,9 +226,9 @@
         .message-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
-            padding: 30px 50px;
+            padding: 25px 45px;
             border-radius: 80px 20px 80px 20px;
-            margin: 30px auto;
+            margin: 20px auto;
             border: 3px solid white;
             box-shadow: 0 15px 30px rgba(255, 107, 139, 0.3);
             max-width: 600px;
@@ -219,7 +238,7 @@
         }
 
         .message-card p {
-            font-size: 24px;
+            font-size: 28px;
             color: #ff4d6d;
             font-weight: bold;
             line-height: 1.6;
@@ -228,7 +247,7 @@
         }
 
         .message-card .emoji-row {
-            font-size: 40px;
+            font-size: 45px;
             margin-top: 15px;
             animation: emojiBounce 2s infinite;
             text-align: center;
@@ -245,7 +264,7 @@
             gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 40px auto;
+            margin: 30px auto;
             width: 100%;
         }
 
@@ -283,15 +302,15 @@
 
         /* Surprise Button */
         .surprise-btn {
-            margin: 40px auto;
+            margin: 30px auto;
             display: flex;
             justify-content: center;
             width: 100%;
         }
 
         .party-button {
-            padding: 20px 50px;
-            font-size: 28px;
+            padding: 18px 45px;
+            font-size: 26px;
             font-family: 'Fredoka One', sans-serif;
             background: linear-gradient(145deg, #ffd93d, #ffb347);
             border: none;
@@ -341,15 +360,20 @@
         /* Responsive */
         @media (max-width: 768px) {
             .banner h1 {
-                font-size: 45px;
+                font-size: 32px;
+                white-space: normal;
             }
             
             .happy {
-                font-size: 40px;
+                font-size: 70px;
             }
             
             .birthday {
-                font-size: 55px;
+                font-size: 85px;
+            }
+            
+            .chutiii-text {
+                font-size: 45px;
             }
             
             .cake {
@@ -369,23 +393,28 @@
 
         @media (max-width: 480px) {
             .banner {
-                padding: 20px 30px;
+                padding: 12px 25px;
             }
             
             .banner h1 {
-                font-size: 32px;
+                font-size: 28px;
             }
             
             .happy {
-                font-size: 30px;
+                font-size: 50px;
             }
             
             .birthday {
-                font-size: 40px;
+                font-size: 60px;
+            }
+            
+            .chutiii-text {
+                font-size: 36px;
+                padding: 8px 25px;
             }
             
             .message-card p {
-                font-size: 18px;
+                font-size: 22px;
             }
             
             .feature {
@@ -410,15 +439,20 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Birthday Banner - Updated to "For My Love ❤️" -->
+        <!-- Birthday Banner - Smaller and moved up -->
         <div class="banner">
             <h1>For My Love ❤️🎉</h1>
         </div>
 
-        <!-- Birthday Text -->
+        <!-- Birthday Text - Larger to grab attention -->
         <div class="birthday-text">
             <div class="happy">HAPPY</div>
             <div class="birthday">BIRTHDAY</div>
+        </div>
+
+        <!-- Chutiii Text - New addition -->
+        <div class="chutiii-text">
+            Chutiii!!! 🎂
         </div>
 
         <!-- Cake with Candle -->
@@ -528,7 +562,7 @@
             
             // Alert message
             setTimeout(() => {
-                alert('🎉 HAPPY BIRTHDAY MY LOVE! 🎉\n\nWishing you the most amazing day! 🎂❤️');
+                alert('🎉 HAPPY BIRTHDAY CHUTIII!!! 🎉\n\nWishing you the most amazing day, My Love! 🎂❤️');
             }, 500);
         }
 
