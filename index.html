@@ -1,658 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Happy Birthday ❤️</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(145deg, #ff758f 0%, #ffb3c6 100%);
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* Elegant background pattern */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 20%),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 20%),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.1) 0%, transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.1) 0%, transparent 25%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.container {
-    max-width: 650px;
-    width: 100%;
-    padding: 40px 30px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.3) inset;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    position: relative;
-    z-index: 10;
-    animation: containerFloat 4s infinite alternate ease-in-out;
-}
-
-@keyframes containerFloat {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
-}
-
-h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(42px, 10vw, 72px);
-    margin-bottom: 15px;
-    line-height: 1.2;
-    text-shadow: 3px 3px 6px rgba(255, 20, 147, 0.3);
-    background: linear-gradient(135deg, #fff 0%, #ffe6f0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    font-size: clamp(18px, 4vw, 22px);
-    margin-bottom: 25px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.romantic-message {
-    font-size: 20px;
-    margin: 25px 0 15px;
-    font-style: italic;
-    background: rgba(255, 255, 255, 0.3);
-    padding: 15px 25px;
-    border-radius: 60px;
-    display: inline-block;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.button-container {
-    position: relative;
-    margin: 30px 0 20px;
-    min-height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.celebrate-btn {
-    padding: 18px 45px;
-    font-size: 22px;
-    border: none;
-    border-radius: 60px;
-    background: linear-gradient(135deg, #fff, #fff0f5);
-    color: #ff4d6d;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    min-width: 260px;
-    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4), 0 0 0 2px rgba(255,255,255,0.8);
-    font-weight: 600;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    z-index: 10;
-}
-
-.celebrate-btn::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    transform: scale(0.5);
-}
-
-.celebrate-btn:hover::before {
-    opacity: 0.3;
-    transform: scale(1);
-}
-
-.celebrate-btn:hover {
-    transform: scale(1.08) translateY(-3px);
-    box-shadow: 0 20px 40px rgba(255, 77, 109, 0.5), 0 0 0 3px rgba(255,255,255,0.9);
-}
-
-.celebrate-btn:active {
-    transform: scale(0.98) translateY(0);
-}
-
-.celebrate-btn.hidden {
-    display: none;
-}
-
-/* Elegant Floating Elements */
-.floating-element {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9995;
-    filter: drop-shadow(0 5px 15px rgba(255, 77, 109, 0.3));
-    will-change: transform, opacity;
-    opacity: 0;
-    animation: elegantFloat 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Rose Petal Animation */
-.floating-element.petal {
-    font-size: 24px;
-    animation: petalFloat 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes petalFloat {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(0deg) scale(0.3);
-        opacity: 0;
-    }
-    15% {
-        opacity: 0.9;
-        transform: translate3d(-10px, -15vh, 0) rotate(15deg) scale(0.8);
-    }
-    35% {
-        transform: translate3d(15px, -35vh, 0) rotate(30deg) scale(1.1);
-    }
-    55% {
-        transform: translate3d(-12px, -55vh, 0) rotate(45deg) scale(1.2);
-    }
-    75% {
-        transform: translate3d(10px, -75vh, 0) rotate(60deg) scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate3d(0, -100vh, 0) rotate(90deg) scale(0.5);
-        opacity: 0;
-    }
-}
-
-/* Sparkle Animation */
-.floating-element.sparkle {
-    font-size: 20px;
-    animation: sparkleFloat 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes sparkleFloat {
-    0% {
-        transform: translate3d(0, 0, 0) scale(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-        transform: translate3d(5px, -10vh, 0) scale(1.2);
-    }
-    30% {
-        transform: translate3d(-8px, -30vh, 0) scale(1.5);
-        filter: brightness(1.5);
-    }
-    50% {
-        transform: translate3d(10px, -50vh, 0) scale(1.8);
-        filter: brightness(2);
-    }
-    70% {
-        transform: translate3d(-5px, -70vh, 0) scale(1.3);
-        filter: brightness(1.5);
-    }
-    90% {
-        transform: translate3d(3px, -90vh, 0) scale(0.8);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translate3d(0, -100vh, 0) scale(0);
-        opacity: 0;
-    }
-}
-
-/* Heart Animation */
-.floating-element.heart {
-    font-size: 28px;
-    animation: heartFloat 3.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes heartFloat {
-    0% {
-        transform: translate3d(0, 0, 0) scale(0.2);
-        opacity: 0;
-    }
-    12% {
-        opacity: 1;
-        transform: translate3d(-8px, -12vh, 0) scale(0.7);
-    }
-    28% {
-        transform: translate3d(12px, -28vh, 0) scale(1);
-    }
-    44% {
-        transform: translate3d(-10px, -44vh, 0) scale(1.2);
-    }
-    60% {
-        transform: translate3d(15px, -60vh, 0) scale(1.4);
-        filter: drop-shadow(0 0 15px #ff4d6d);
-    }
-    76% {
-        transform: translate3d(-7px, -76vh, 0) scale(1.2);
-        opacity: 0.8;
-    }
-    92% {
-        transform: translate3d(5px, -92vh, 0) scale(0.8);
-        opacity: 0.4;
-    }
-    100% {
-        transform: translate3d(0, -100vh, 0) scale(0.3);
-        opacity: 0;
-    }
-}
-
-/* Star Animation */
-.floating-element.star {
-    font-size: 26px;
-    animation: starFloat 4.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes starFloat {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(0deg) scale(0.2);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.9;
-        transform: translate3d(15px, -10vh, 0) rotate(36deg) scale(0.8);
-    }
-    30% {
-        transform: translate3d(-12px, -30vh, 0) rotate(72deg) scale(1.2);
-    }
-    50% {
-        transform: translate3d(18px, -50vh, 0) rotate(108deg) scale(1.5);
-        filter: brightness(1.8);
-    }
-    70% {
-        transform: translate3d(-10px, -70vh, 0) rotate(144deg) scale(1.2);
-        opacity: 0.7;
-    }
-    90% {
-        transform: translate3d(8px, -90vh, 0) rotate(180deg) scale(0.7);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translate3d(0, -100vh, 0) rotate(216deg) scale(0.2);
-        opacity: 0;
-    }
-}
-
-/* Glitter Animation */
-.floating-element.glitter {
-    font-size: 16px;
-    animation: glitterFloat 2.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes glitterFloat {
-    0% {
-        transform: translate3d(0, 0, 0) scale(0);
-        opacity: 0;
-    }
-    8% {
-        opacity: 0.8;
-        transform: translate3d(-5px, -8vh, 0) scale(1.2);
-    }
-    25% {
-        transform: translate3d(8px, -25vh, 0) scale(1.8);
-        filter: brightness(2);
-    }
-    45% {
-        transform: translate3d(-7px, -45vh, 0) scale(2.2);
-        filter: brightness(2.5);
-    }
-    65% {
-        transform: translate3d(6px, -65vh, 0) scale(1.5);
-        opacity: 0.6;
-    }
-    85% {
-        transform: translate3d(-4px, -85vh, 0) scale(0.8);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translate3d(0, -100vh, 0) scale(0);
-        opacity: 0;
-    }
-}
-
-/* Decorative background elements */
-.bg-decoration {
-    position: fixed;
-    font-size: 120px;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 0;
-    animation: bgFloat 20s infinite alternate ease-in-out;
-}
-
-@keyframes bgFloat {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(30px, -30px) rotate(20deg); }
-}
-
-.bg-decoration:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
-.bg-decoration:nth-child(2) { bottom: 10%; right: 8%; animation-delay: 3s; }
-.bg-decoration:nth-child(3) { top: 50%; right: 15%; animation-delay: 6s; }
-
-/* Love message */
-.love-message {
-    font-size: 42px;
-    font-family: 'Dancing Script', cursive;
-    color: white;
-    margin-top: 30px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.4);
-    position: relative;
-    z-index: 20;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 15px 35px;
-    border-radius: 60px;
-    backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    display: inline-block;
-}
-
-.love-message.show {
-    opacity: 1;
-    animation: messageAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes messageAppear {
-    0% { transform: scale3d(0, 0, 0) rotate(-10deg); }
-    60% { transform: scale3d(1.2, 1.2, 1.2) rotate(5deg); }
-    80% { transform: scale3d(0.95, 0.95, 0.95) rotate(-2deg); }
-    100% { transform: scale3d(1, 1, 1) rotate(0); }
-}
-
-/* Fade overlay */
-.fade-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(145deg, #ff758f 0%, #ffb3c6 100%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 9998;
-    transition: opacity 0.8s ease;
-}
-
-.fade-overlay.active {
-    opacity: 1;
-}
-
-/* Mobile optimization */
-@media (max-width: 480px) {
-    .container {
-        padding: 30px 20px;
-    }
-    
-    .celebrate-btn {
-        min-width: 220px;
-        font-size: 20px;
-        padding: 16px 35px;
-    }
-    
-    .love-message {
-        font-size: 32px;
-        padding: 12px 25px;
-    }
-    
-    .romantic-message {
-        font-size: 18px;
-        padding: 12px 20px;
-    }
-}
-</style>
-</head>
-
-<body>
-    <!-- Decorative background elements -->
-    <div class="bg-decoration">❤️</div>
-    <div class="bg-decoration">✨</div>
-    <div class="bg-decoration">🌸</div>
-
-    <!-- Fade overlay -->
-    <div id="fadeOverlay" class="fade-overlay"></div>
-
-    <div class="container" id="mainContainer">
-        <h1>Happy Birthday My Love</h1>
-        
-        <div class="romantic-message">
-            "You make every moment magical"
-        </div>
-        
-        <p class="subtitle">Today is all about celebrating you ❤️</p>
-        
-        <div class="button-container">
-            <button id="celebrateBtn" class="celebrate-btn" onclick="startCelebration()">
-                ✨ Click for Magic ✨
-            </button>
-        </div>
-        
-        <div id="loveMessage" class="love-message"></div>
-    </div>
-
-    <script>
-    let celebrationDone = false;
-    let animationFrame;
-    let bubbleInterval;
-    let activeElements = [];
-
-    function startCelebration() {
-        if (celebrationDone) return;
-        
-        // Hide the button with fade
-        const btn = document.getElementById('celebrateBtn');
-        btn.style.transition = 'opacity 0.3s';
-        btn.style.opacity = '0';
-        
-        setTimeout(() => {
-            btn.classList.add('hidden');
-        }, 300);
-        
-        // Start elegant celebration
-        animationFrame = requestAnimationFrame(() => {
-            createElegantCelebration();
-        });
-        
-        // After 3 seconds, fade out
-        setTimeout(() => {
-            // Stop creating new elements
-            if (bubbleInterval) {
-                clearInterval(bubbleInterval);
-            }
-            
-            // Fade out all floating elements
-            const elements = document.querySelectorAll('.floating-element');
-            elements.forEach(el => {
-                el.style.transition = 'opacity 0.5s';
-                el.style.opacity = '0';
-            });
-            
-            // Activate fade overlay
-            const overlay = document.getElementById('fadeOverlay');
-            overlay.classList.add('active');
-            
-            // After fade, clean up and show message
-            setTimeout(() => {
-                // Remove all floating elements
-                const allElements = document.querySelectorAll('.floating-element');
-                allElements.forEach(el => el.remove());
-                
-                // Deactivate overlay
-                overlay.classList.remove('active');
-                
-                // Show love message
-                const loveMsg = document.getElementById('loveMessage');
-                loveMsg.classList.add('show');
-                loveMsg.innerHTML = 'I love you! ❤️';
-                
-                // Reset button state
-                celebrationDone = true;
-            }, 500);
-            
-        }, 3000);
-        
-        celebrationDone = true;
-    }
-
-    function createElegantCelebration() {
-        // Create elements with increasing intensity
-        let count = 0;
-        const maxElements = 400;
-        
-        function createBatch() {
-            if (count >= maxElements) return;
-            
-            // Determine batch size based on progress
-            const progress = count / maxElements;
-            const batchSize = Math.floor(2 + progress * 5); // 2 to 7 elements per batch
-            
-            for (let i = 0; i < batchSize; i++) {
-                if (count < maxElements) {
-                    createElegantElement();
-                    count++;
-                }
-            }
-            
-            // Schedule next batch with increasing frequency
-            const delay = Math.max(30, 80 - progress * 50);
-            bubbleInterval = setTimeout(createBatch, delay);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        // Start creating
-        createBatch();
-    }
 
-    function createElegantElement() {
-        requestAnimationFrame(() => {
-            // Elegant collections
-            const petals = ['🌸', '🌹', '🌺', '🌷', '💐', '🌸', '🌼'];
-            const hearts = ['❤️', '💕', '💖', '💗', '💓', '💘', '💝'];
-            const sparkles = ['✨', '💫', '⭐', '🌟', '⚡', '💥'];
-            const stars = ['⭐', '🌟', '💫', '✨', '☄️', '🌠'];
-            const glitters = ['🫧', '💧', '✨', '.', '·', '*'];
-            
-            // Choose random type with weighted probabilities
-            const rand = Math.random();
-            let type, icon, animationClass;
-            
-            if (rand < 0.3) { // 30% hearts
-                type = 'heart';
-                icon = hearts[Math.floor(Math.random() * hearts.length)];
-                animationClass = 'floating-element heart';
-            } else if (rand < 0.5) { // 20% petals
-                type = 'petal';
-                icon = petals[Math.floor(Math.random() * petals.length)];
-                animationClass = 'floating-element petal';
-            } else if (rand < 0.7) { // 20% sparkles
-                type = 'sparkle';
-                icon = sparkles[Math.floor(Math.random() * sparkles.length)];
-                animationClass = 'floating-element sparkle';
-            } else if (rand < 0.85) { // 15% stars
-                type = 'star';
-                icon = stars[Math.floor(Math.random() * stars.length)];
-                animationClass = 'floating-element star';
-            } else { // 15% glitter
-                type = 'glitter';
-                icon = glitters[Math.floor(Math.random() * glitters.length)];
-                animationClass = 'floating-element glitter';
-            }
-            
-            // Create element
-            const element = document.createElement('div');
-            element.className = animationClass;
-            element.innerHTML = icon;
-            
-            // Position (spread across entire width)
-            element.style.left = Math.random() * 96 + 2 + '%';
-            
-            // Size variation
-            let size;
-            if (type === 'glitter') {
-                size = Math.random() * 12 + 8;
-            } else {
-                size = Math.random() * 32 + 20;
-            }
-            element.style.fontSize = size + 'px';
-            
-            // Random slight rotation
-            if (Math.random() > 0.5) {
-                element.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
-            }
-            
-            // Random delay for natural flow
-            element.style.animationDelay = Math.random() * 0.6 + 's';
-            
-            // Add to DOM
-            document.body.appendChild(element);
-            
-            // Store reference
-            activeElements.push(element);
-            
-            // Remove after animation
-            setTimeout(() => {
-                if (element.parentNode) {
-                    element.remove();
-                    const index = activeElements.indexOf(element);
-                    if (index > -1) activeElements.splice(index, 1);
-                }
-            }, 4500);
-        });
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
 
-    // Clean up
-    window.addEventListener('beforeunload', () => {
-        if (animationFrame) cancelAnimationFrame(animationFrame);
-        if (bubbleInterval) clearTimeout(bubbleInterval);
-    });
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 0;
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
 
-    // Touch support
-    if ('ontouchstart' in window) {
-        document.getElementById('celebrateBtn').addEventListener('touchstart', function(e) {
-            this.style.transform = 'scale(0.95)';
-        });
-        
-        document.getElementById('celebrateBtn').addEventListener('touchend', function(e) {
-            this.style.transform = 'scale(1)';
-        });
-    }
-    </script>
+        nav a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 140px);
+        }
+
+        /* Birthday Text */
+        .birthday-text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .happy {
+            font-size: 100px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        .birthday {
+            font-size: 100px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 5px;
+            margin-top: -10px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Description */
+        .description {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .description .small-text {
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Contact Button */
+        .contact-btn {
+            margin-top: 30px;
+        }
+
+        .contact-btn a {
+            display: inline-block;
+            padding: 15px 50px;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .contact-btn a:hover {
+            background: white;
+            color: #764ba2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                gap: 30px;
+                padding: 30px 0;
+                font-size: 16px;
+            }
+
+            .happy, .birthday {
+                font-size: 60px;
+            }
+
+            .description {
+                font-size: 16px;
+                padding: 0 20px;
+            }
+
+            .contact-btn a {
+                padding: 12px 40px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            .happy, .birthday {
+                font-size: 40px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .contact-btn a {
+                padding: 10px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">PORTFOLIO</a>
+        <a href="#">CONTACT</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="birthday-text">
+            <div class="happy">HAPPY</div>
+            <div class="birthday">BIRTHDAY</div>
+        </div>
+
+        <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <p>elit. Donec quis facilis ligula.</p>
+            <p class="small-text">Donec enim justo.</p>
+        </div>
+
+        <div class="contact-btn">
+            <a href="#">Contact</a>
+        </div>
+    </div>
 </body>
 </html>
