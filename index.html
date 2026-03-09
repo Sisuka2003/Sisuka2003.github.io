@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday Chuti❤️ </title>
+<title>Happy Birthday ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -98,47 +98,53 @@ button.hidden {
 /* Bubble Animation - All icons start from bottom and float up */
 .bubble-icon {
     position: fixed;
-    bottom: -50px; /* Start below screen */
+    bottom: -20px; /* Start just below screen */
     pointer-events: none;
     z-index: 9999;
     animation: bubbleUp 3s linear forwards;
     filter: drop-shadow(0 5px 15px rgba(255, 20, 147, 0.3));
+    opacity: 0;
+    will-change: transform, opacity;
 }
 
 @keyframes bubbleUp {
     0% {
-        transform: translateY(0) scale(0.3);
+        transform: translateY(0) scale(0.2);
         opacity: 0;
     }
-    10% {
+    5% {
+        opacity: 1;
+        transform: translateY(-5vh) scale(0.5);
+    }
+    15% {
+        transform: translateY(-15vh) scale(0.8);
+    }
+    30% {
+        transform: translateY(-30vh) scale(1.1);
+    }
+    45% {
+        transform: translateY(-45vh) scale(1.3);
+    }
+    60% {
+        transform: translateY(-60vh) scale(1.2);
+    }
+    75% {
+        transform: translateY(-75vh) scale(1);
         opacity: 0.9;
-        transform: translateY(-10vh) scale(0.6);
     }
-    25% {
-        transform: translateY(-25vh) scale(0.8);
-    }
-    40% {
-        transform: translateY(-40vh) scale(1);
-    }
-    55% {
-        transform: translateY(-55vh) scale(1.1);
-    }
-    70% {
-        transform: translateY(-70vh) scale(1);
-    }
-    85% {
-        transform: translateY(-85vh) scale(0.8);
-        opacity: 0.7;
+    90% {
+        transform: translateY(-90vh) scale(0.7);
+        opacity: 0.5;
     }
     100% {
-        transform: translateY(-100vh) scale(0.5);
+        transform: translateY(-100vh) scale(0.3);
         opacity: 0;
     }
 }
 
 /* Different speeds for variety */
 .bubble-icon.slow {
-    animation: bubbleUpSlow 3s linear forwards;
+    animation: bubbleUpSlow 3.5s linear forwards;
 }
 
 @keyframes bubbleUpSlow {
@@ -146,19 +152,55 @@ button.hidden {
         transform: translateY(0) scale(0.2);
         opacity: 0;
     }
-    15% {
-        opacity: 0.8;
-        transform: translateY(-15vh) scale(0.5);
+    8% {
+        opacity: 1;
+        transform: translateY(-8vh) scale(0.5);
     }
-    35% {
-        transform: translateY(-35vh) scale(0.8);
+    25% {
+        transform: translateY(-25vh) scale(0.9);
     }
-    55% {
-        transform: translateY(-55vh) scale(1);
+    45% {
+        transform: translateY(-45vh) scale(1.2);
     }
-    75% {
-        transform: translateY(-75vh) scale(0.9);
+    65% {
+        transform: translateY(-65vh) scale(1.1);
+    }
+    85% {
+        transform: translateY(-85vh) scale(0.7);
         opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.3);
+        opacity: 0;
+    }
+}
+
+.bubble-icon.fast {
+    animation: bubbleUpFast 2.5s linear forwards;
+}
+
+@keyframes bubbleUpFast {
+    0% {
+        transform: translateY(0) scale(0.3);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+        transform: translateY(-10vh) scale(0.7);
+    }
+    20% {
+        transform: translateY(-35vh) scale(1.1);
+    }
+    40% {
+        transform: translateY(-60vh) scale(1.4);
+    }
+    60% {
+        transform: translateY(-80vh) scale(1.2);
+        opacity: 0.8;
+    }
+    80% {
+        transform: translateY(-95vh) scale(0.8);
+        opacity: 0.4;
     }
     100% {
         transform: translateY(-100vh) scale(0.4);
@@ -166,90 +208,114 @@ button.hidden {
     }
 }
 
-.bubble-icon.fast {
-    animation: bubbleUpFast 3s linear forwards;
-}
-
-@keyframes bubbleUpFast {
-    0% {
-        transform: translateY(0) scale(0.4);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-        transform: translateY(-20vh) scale(0.8);
-    }
-    30% {
-        transform: translateY(-45vh) scale(1.1);
-    }
-    50% {
-        transform: translateY(-65vh) scale(1.2);
-    }
-    70% {
-        transform: translateY(-80vh) scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.6);
-        opacity: 0;
-    }
-}
-
-/* Slight left-right drift for bubble effect */
+/* Left drift */
 .bubble-icon.drift-left {
     animation: bubbleUpDriftLeft 3s linear forwards;
 }
 
 @keyframes bubbleUpDriftLeft {
     0% {
-        transform: translate(0, 0) scale(0.3);
+        transform: translate(0, 0) scale(0.2);
         opacity: 0;
     }
+    5% {
+        opacity: 1;
+        transform: translate(-5px, -5vh) scale(0.5);
+    }
     20% {
-        opacity: 0.9;
-        transform: translate(-15px, -20vh) scale(0.7);
+        transform: translate(-20px, -20vh) scale(0.9);
     }
     40% {
-        transform: translate(-25px, -40vh) scale(0.9);
+        transform: translate(-35px, -40vh) scale(1.2);
     }
     60% {
-        transform: translate(-15px, -60vh) scale(1.1);
+        transform: translate(-25px, -60vh) scale(1.3);
     }
     80% {
-        transform: translate(-5px, -80vh) scale(1);
+        transform: translate(-10px, -80vh) scale(1);
         opacity: 0.7;
     }
     100% {
-        transform: translate(0, -100vh) scale(0.5);
+        transform: translate(0, -100vh) scale(0.4);
         opacity: 0;
     }
 }
 
+/* Right drift */
 .bubble-icon.drift-right {
     animation: bubbleUpDriftRight 3s linear forwards;
 }
 
 @keyframes bubbleUpDriftRight {
     0% {
-        transform: translate(0, 0) scale(0.3);
+        transform: translate(0, 0) scale(0.2);
         opacity: 0;
     }
+    5% {
+        opacity: 1;
+        transform: translate(5px, -5vh) scale(0.5);
+    }
     20% {
-        opacity: 0.9;
-        transform: translate(15px, -20vh) scale(0.7);
+        transform: translate(20px, -20vh) scale(0.9);
     }
     40% {
-        transform: translate(25px, -40vh) scale(0.9);
+        transform: translate(35px, -40vh) scale(1.2);
     }
     60% {
-        transform: translate(15px, -60vh) scale(1.1);
+        transform: translate(25px, -60vh) scale(1.3);
     }
     80% {
-        transform: translate(5px, -80vh) scale(1);
+        transform: translate(10px, -80vh) scale(1);
         opacity: 0.7;
     }
     100% {
-        transform: translate(0, -100vh) scale(0.5);
+        transform: translate(0, -100vh) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* Zigzag pattern */
+.bubble-icon.zigzag {
+    animation: bubbleUpZigzag 3.2s linear forwards;
+}
+
+@keyframes bubbleUpZigzag {
+    0% {
+        transform: translate(0, 0) scale(0.2);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+        transform: translate(8px, -8vh) scale(0.6);
+    }
+    15% {
+        transform: translate(-12px, -18vh) scale(0.9);
+    }
+    25% {
+        transform: translate(15px, -28vh) scale(1.1);
+    }
+    35% {
+        transform: translate(-18px, -38vh) scale(1.2);
+    }
+    45% {
+        transform: translate(20px, -48vh) scale(1.3);
+    }
+    55% {
+        transform: translate(-15px, -58vh) scale(1.2);
+    }
+    65% {
+        transform: translate(12px, -68vh) scale(1.1);
+    }
+    75% {
+        transform: translate(-8px, -78vh) scale(0.9);
+        opacity: 0.8;
+    }
+    85% {
+        transform: translate(5px, -88vh) scale(0.7);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(0, -100vh) scale(0.3);
         opacity: 0;
     }
 }
@@ -284,6 +350,8 @@ button.hidden {
     opacity: 0;
     transition: opacity 0.5s ease;
     text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.5);
+    position: relative;
+    z-index: 20;
 }
 
 .love-message.show {
@@ -341,20 +409,43 @@ button.hidden {
         // Hide the button immediately
         document.getElementById('celebrateBtn').classList.add('hidden');
         
-        // Create bubbles for 3 seconds (icons floating up from bottom)
-        const bubbleInterval = setInterval(createBubble, 60); // Create bubbles every 60ms
+        // Start with slow bubbles and increase intensity
+        let intensity = 0;
+        const totalBubbles = 400; // Target total bubbles
+        let bubblesCreated = 0;
         
-        // Stop creating bubbles after 3 seconds
-        setTimeout(() => {
-            clearInterval(bubbleInterval);
+        // Function to calculate bubble creation rate based on time
+        function getBubbleDelay() {
+            // Start with 100ms delay (10 per second), end with 20ms delay (50 per second)
+            const progress = Math.min(bubblesCreated / totalBubbles, 1);
+            const delay = 100 - (progress * 80); // 100ms to 20ms
+            return Math.max(20, Math.min(100, delay));
+        }
+        
+        // Create bubbles with increasing intensity
+        function createNextBubble() {
+            if (bubblesCreated >= totalBubbles) return;
             
+            createBubble();
+            bubblesCreated++;
+            
+            // Schedule next bubble with current intensity
+            const nextDelay = getBubbleDelay();
+            setTimeout(createNextBubble, nextDelay);
+        }
+        
+        // Start creating bubbles
+        setTimeout(createNextBubble, 50); // Start quickly
+        
+        // After 3 seconds, show love message and final bubbles
+        setTimeout(() => {
             // Show love message
             document.getElementById('loveMessage').classList.add('show');
             document.getElementById('loveMessage').innerHTML = "I love you! ❤️🎉";
             
-            // Add a few final bubbles
-            for (let i = 0; i < 15; i++) {
-                setTimeout(() => createBubble(), i * 30);
+            // Add a massive final burst of bubbles
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createBubble(), i * 10);
             }
         }, 3000);
         
@@ -362,46 +453,68 @@ button.hidden {
     }
 
     function createBubble() {
-        // Mix of different icons
+        // Expanded icon collection with more variety
         const icons = [
-            '❤️', '💕', '💖', '💗', '💓', '💘', '💝', // Hearts
-            '🎉', '🎊', '🥳', '🎂', '🎈', '🎁', // Celebrations
-            '✨', '⭐', '🌟', '💫', '⚡', // Stars
-            '🌸', '🌹', '🌺', '🌷', '💐', // Flowers
-            '🦋', '🐝', '🐞', '🕊️' // Cute things
+            // Hearts (more of these)
+            '❤️', '❤️', '❤️', '💕', '💕', '💖', '💖', '💗', '💗', '💓', '💘', '💝', '💞',
+            // Celebrations
+            '🎉', '🎉', '🎊', '🎊', '🥳', '🥳', '🎂', '🎈', '🎈', '🎁', '🎀',
+            // Stars & Sparkles
+            '✨', '✨', '⭐', '⭐', '🌟', '🌟', '💫', '💫', '⚡',
+            // Flowers
+            '🌸', '🌸', '🌹', '🌺', '🌷', '💐', '🌸', '🌼', '🌻',
+            // Cute things
+            '🦋', '🦋', '🐝', '🐞', '🕊️', '🌈', '☁️', '⭐',
+            // Additional fun icons
+            '💝', '💖', '💗', '💓', '💞', '💕', '❣️', '💔', '❤️‍🔥', '❤️‍🩹',
+            '🎵', '🎶', '💫', '⭐', '🌟', '✨', '⚡', '☄️', '💥',
+            '🫧', '💧', '💦', '🫧' // Bubbles
         ];
         
-        // Different animation classes for variety
+        // Animation classes with weights (more of certain types)
         const animations = [
-            'bubble-icon',
-            'bubble-icon slow',
-            'bubble-icon fast',
-            'bubble-icon drift-left',
-            'bubble-icon drift-right'
+            'bubble-icon', 'bubble-icon', 'bubble-icon', // normal
+            'bubble-icon slow', 'bubble-icon slow', // slow
+            'bubble-icon fast', 'bubble-icon fast', // fast
+            'bubble-icon drift-left', 'bubble-icon drift-left', // drift left
+            'bubble-icon drift-right', 'bubble-icon drift-right', // drift right
+            'bubble-icon zigzag', 'bubble-icon zigzag' // zigzag
         ];
         
-        // Create bubble element
-        const bubble = document.createElement('div');
-        bubble.className = animations[Math.floor(Math.random() * animations.length)];
-        bubble.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        // Create multiple bubbles at once for denser effect
+        const batchSize = Math.random() > 0.7 ? 3 : 1; // Sometimes create 3 at once
         
-        // Random horizontal position (5% to 95% of screen width)
-        bubble.style.left = Math.random() * 90 + 5 + '%';
-        
-        // Random size
-        const size = Math.random() * 30 + 20;
-        bubble.style.fontSize = size + 'px';
-        
-        // Random delay (0 to 1.5 seconds) so they don't all start at once
-        bubble.style.animationDelay = Math.random() * 1.5 + 's';
-        
-        // Add to body
-        document.body.appendChild(bubble);
-        
-        // Remove after animation completes (3 seconds + delay)
-        setTimeout(() => {
-            bubble.remove();
-        }, 4500); // 3s animation + 1.5s max delay
+        for (let b = 0; b < batchSize; b++) {
+            // Create bubble element
+            const bubble = document.createElement('div');
+            bubble.className = animations[Math.floor(Math.random() * animations.length)];
+            bubble.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            
+            // Spread across full width (1% to 99%)
+            bubble.style.left = Math.random() * 98 + 1 + '%';
+            
+            // Random size (small to large)
+            const size = Math.random() * 35 + 15; // 15px to 50px
+            bubble.style.fontSize = size + 'px';
+            
+            // Random delay (0 to 1 second)
+            bubble.style.animationDelay = Math.random() * 1 + 's';
+            
+            // Random starting horizontal offset for variety
+            if (Math.random() > 0.5) {
+                bubble.style.transform = `translateX(${Math.random() * 20 - 10}px)`;
+            }
+            
+            // Add to body
+            document.body.appendChild(bubble);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                if (bubble.parentNode) {
+                    bubble.remove();
+                }
+            }, 4500); // 3.5s max animation + 1s delay
+        }
     }
 
     // Add touch support for mobile
