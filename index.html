@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Banchii! 🎂</title>
+    <title>Happy Birthday My Love! 🎂</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
@@ -88,38 +88,51 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            text-align: center; /* Ensures all text is centered */
         }
 
         /* Banner */
         .banner {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            padding: 30px 60px;
+            padding: 25px 50px;
             border-radius: 100px;
             margin-bottom: 40px;
             border: 4px dashed #ff6b8b;
             box-shadow: 0 20px 40px rgba(255, 107, 139, 0.3);
-            transform: rotate(-2deg);
+            transform: rotate(-1deg);
             animation: bannerFloat 3s infinite alternate;
+            display: inline-block; /* Makes banner fit content */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes bannerFloat {
-            0% { transform: rotate(-2deg) translateY(0); }
-            100% { transform: rotate(2deg) translateY(-10px); }
+            0% { transform: rotate(-1deg) translateY(0); }
+            100% { transform: rotate(1deg) translateY(-10px); }
         }
 
         .banner h1 {
-            font-size: 80px;
+            font-size: 70px;
             font-family: 'Pacifico', cursive;
             color: #ff4d6d;
-            text-shadow: 5px 5px 0 #ffe6e9, 8px 8px 0 rgba(0,0,0,0.1);
+            text-shadow: 3px 3px 0 #ffe6e9, 5px 5px 0 rgba(0,0,0,0.1);
             line-height: 1;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 45px;
+                white-space: normal;
+            }
         }
 
         /* Birthday Text */
         .birthday-text {
             text-align: center;
             margin: 20px 0;
+            width: 100%;
         }
 
         .happy {
@@ -131,6 +144,8 @@
             letter-spacing: 5px;
             transform: rotate(-3deg);
             display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .birthday {
@@ -143,12 +158,17 @@
             transform: rotate(2deg);
             margin-top: -15px;
             display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Cake Section */
         .cake-section {
             margin: 40px 0;
             position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
         .cake {
@@ -189,12 +209,13 @@
             backdrop-filter: blur(10px);
             padding: 30px 50px;
             border-radius: 80px 20px 80px 20px;
-            margin: 30px 0;
+            margin: 30px auto;
             border: 3px solid white;
             box-shadow: 0 15px 30px rgba(255, 107, 139, 0.3);
             max-width: 600px;
             text-align: center;
             transform: rotate(1deg);
+            width: fit-content;
         }
 
         .message-card p {
@@ -203,12 +224,14 @@
             font-weight: bold;
             line-height: 1.6;
             font-family: 'Comic Neue', cursive;
+            text-align: center;
         }
 
         .message-card .emoji-row {
             font-size: 40px;
             margin-top: 15px;
             animation: emojiBounce 2s infinite;
+            text-align: center;
         }
 
         @keyframes emojiBounce {
@@ -222,7 +245,8 @@
             gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 40px 0;
+            margin: 40px auto;
+            width: 100%;
         }
 
         .feature {
@@ -259,7 +283,10 @@
 
         /* Surprise Button */
         .surprise-btn {
-            margin: 40px 0;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
         .party-button {
@@ -314,7 +341,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .banner h1 {
-                font-size: 50px;
+                font-size: 45px;
             }
             
             .happy {
@@ -341,8 +368,12 @@
         }
 
         @media (max-width: 480px) {
+            .banner {
+                padding: 20px 30px;
+            }
+            
             .banner h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .happy {
@@ -379,9 +410,9 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Birthday Banner -->
+        <!-- Birthday Banner - Updated to "For My Love ❤️" -->
         <div class="banner">
-            <h1>🎉 For Banchii! 🎉</h1>
+            <h1>🎉 For My Love ❤️ 🎉</h1>
         </div>
 
         <!-- Birthday Text -->
@@ -398,10 +429,10 @@
 
         <!-- Message Card -->
         <div class="message-card">
-            <p>Happy Birthday Banchii! 🎂</p>
+            <p>Happy Birthday My Love! 🎂</p>
             <p>You make life so much fun!</p>
             <div class="emoji-row">
-                🎉 🎊 🎈 🎁
+                🎉 🎊 🎈 🎁 ❤️
             </div>
         </div>
 
@@ -473,6 +504,7 @@
             // Party popper celebration
             partyPopper('🎉');
             partyPopper('🎊');
+            partyPopper('❤️');
             
             // Show message
             setTimeout(() => {
@@ -490,12 +522,13 @@
                     partyPopper('🎊');
                     partyPopper('🎈');
                     partyPopper('🥳');
+                    partyPopper('❤️');
                 }, i * 200);
             }
             
             // Alert message
             setTimeout(() => {
-                alert('🎉 HAPPY BIRTHDAY BANCHII! 🎉\n\nWishing you the most amazing day! 🎂❤️');
+                alert('🎉 HAPPY BIRTHDAY MY LOVE! 🎉\n\nWishing you the most amazing day! 🎂❤️');
             }, 500);
         }
 
